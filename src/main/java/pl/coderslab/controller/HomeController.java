@@ -1,5 +1,7 @@
 package pl.coderslab.controller;
 
+import pl.coderslab.service.DbService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         getServletContext().getRequestDispatcher("/META-INF/views/home.jsp").forward(request,response);
     }
 }
