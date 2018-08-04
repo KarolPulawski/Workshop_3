@@ -1,6 +1,8 @@
 package pl.coderslab.controller;
 
+import pl.coderslab.dao.GroupDao;
 import pl.coderslab.dao.UserDao;
+import pl.coderslab.entity.Group;
 import pl.coderslab.entity.User;
 import pl.coderslab.service.DbService;
 
@@ -19,21 +21,33 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> users = null;
+//        List<Group> groups = null;
+//        try {
+//            groups = GroupDao.loadAll();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//
+//        }
+//
+//        for(Group  group : groups) {
+//            System.out.println(group.getId());
+//            System.out.println(group.getName());
+//        }
+
+        Group group = null;
+//        group.setId(8);
+        //group.setName("group from saturday modified");
+
         try {
-            users = UserDao.loadAllByGroupId(1);
+            group = GroupDao.loadById(7);
+
         } catch (Exception e) {
             e.printStackTrace();
-
         }
+        System.out.println(group.getId());
+        System.out.println(group.getName());
 
-        for(User user : users) {
-            System.out.println(user.getUser_group_id());
-            System.out.println(user.getId());
-            System.out.println(user.getPassword());
-            System.out.println(user.getEmail());
-        }
 
-        getServletContext().getRequestDispatcher("/META-INF/views/home.jsp").forward(request,response);
+        getServletContext().getRequestDispatcher("/META-INF/views/home.jsp").forward(request, response);
     }
 }
