@@ -3,9 +3,6 @@ package pl.coderslab.dao;
 import pl.coderslab.entity.User;
 import pl.coderslab.service.DbService;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +18,7 @@ public class UserDao {
 
         List<Map<String, String>> data = DbService.getData(query, params);
         for(Map<String, String> row : data) {
-            createNewUser(users, row);
+            users.add(createNewUser(row));
         }
         return users;
     }
@@ -31,13 +28,12 @@ public class UserDao {
         List<String> params = new ArrayList<>();
         params.add(String.valueOf(id));
 
-        List<User> users = new ArrayList<>();
-
+        User user = null;
         List<Map<String, String>> data = DbService.getData(query, params);
         for(Map<String, String> row : data) {
-            createNewUser(users, row);
+            user = createNewUser(row);
         }
-        return users.get(0);
+        return user;
     }
 
     public static List<User> loadAll() throws Exception{
@@ -46,19 +42,19 @@ public class UserDao {
 
         List<Map<String, String>> data = DbService.getData(query, null);
         for(Map<String, String> row : data) {
-            createNewUser(users, row);
+            users.add(createNewUser(row));
         }
         return users;
     }
 
-    private static void createNewUser(List<User> users, Map<String, String> row) {
+    private static User createNewUser(Map<String, String> row) {
         User user = new User();
         user.setId(Integer.parseInt(row.get("id")));
         user.setUsername(row.get("username"));
         user.setEmail(row.get("email"));
         user.setPassword(row.get("password"));
         user.setUser_group_id(Integer.parseInt(row.get("user_group_id")));
-        users.add(user);
+        return user;
     }
 
     public static void save(User user) throws Exception {
