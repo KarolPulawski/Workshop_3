@@ -1,7 +1,9 @@
 package pl.coderslab.controller;
 
+import pl.coderslab.dao.ExerciseDao;
 import pl.coderslab.dao.GroupDao;
 import pl.coderslab.dao.UserDao;
+import pl.coderslab.entity.Exercise;
 import pl.coderslab.entity.Group;
 import pl.coderslab.entity.User;
 import pl.coderslab.service.DbService;
@@ -21,31 +23,40 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        List<Group> groups = null;
+//        List<Exercise> exercises = null;
 //        try {
-//            groups = GroupDao.loadAll();
+//            exercises = ExerciseDao.loadAll();
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //
 //        }
 //
-//        for(Group  group : groups) {
-//            System.out.println(group.getId());
-//            System.out.println(group.getName());
+//        for(Exercise exercise : exercises) {
+//            System.out.print(exercise.getId());
+//            System.out.print(" | ");
+//            System.out.print(exercise.getTitle());
+//            System.out.print(" | ");
+//            System.out.print(exercise.getDescription());
+//            System.out.print("\n");
 //        }
 
-        Group group = null;
-//        group.setId(8);
-        //group.setName("group from saturday modified");
-
+//        Exercise exercise = new Exercise();
+//        exercise.setId(6);
+//        exercise.setTitle("exercise from sunday");
+//        exercise.setDescription("LAST UPDATED create dao exercise");
         try {
-            group = GroupDao.loadById(7);
+            Exercise exercise = ExerciseDao.loadById(4);
+            System.out.print(exercise.getId());
+            System.out.print(" | ");
+            System.out.print(exercise.getTitle());
+            System.out.print(" | ");
+            System.out.print(exercise.getDescription());
+            System.out.print("\n");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(group.getId());
-        System.out.println(group.getName());
+
 
 
         getServletContext().getRequestDispatcher("/META-INF/views/home.jsp").forward(request, response);
