@@ -1,12 +1,10 @@
 package pl.coderslab.dao;
 
+import pl.coderslab.entity.Exercise;
 import pl.coderslab.entity.Solution;
 import pl.coderslab.service.DbService;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,6 +12,18 @@ import java.util.List;
 import java.util.Map;
 
 public class SolutionDao {
+
+//    public static ArrayList<Exercise> loadByUserId(int id) throws Exception {
+//        String query = "SELECT exercise.title AS title, solution.created AS created FROM " +
+//                "exercise " +
+//                "INNER JOIN solution ON exercise.id = solution.exercise_id " +
+//                "WHERE solution.users_id = ?";
+//        List<String> params = new ArrayList<>();
+//        params.add(String.valueOf(id));
+//        List<Map<String, String>> data = DbService.getData(query, params);
+//        ArrayList<Exercise> exercises = new ArrayList<>();
+//
+//    }
 
     public static ArrayList<Solution> loadByUserIdByExerciseId(int userId, int exerciseId) throws Exception {
         String query = "SELECT solution.id AS id, solution.created AS created, solution.updated AS updated, solution.description AS description, " +
