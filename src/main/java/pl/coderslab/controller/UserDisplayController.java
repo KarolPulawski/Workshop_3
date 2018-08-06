@@ -1,6 +1,8 @@
 package pl.coderslab.controller;
 
+import pl.coderslab.dao.ExerciseDao;
 import pl.coderslab.dao.UserDao;
+import pl.coderslab.entity.Exercise;
 import pl.coderslab.entity.Solution;
 import pl.coderslab.entity.User;
 
@@ -19,12 +21,13 @@ public class UserDisplayController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer group_id = null;
+        Integer group_id;
         List<User> users = null;
-
+        List<Exercise> exercises = null;
         try {
             group_id = Integer.parseInt(request.getParameter("group_id"));
             users = UserDao.loadAllByGroupId(group_id);
+
         } catch (NumberFormatException e) {
             e.printStackTrace();
         } catch (Exception e) {

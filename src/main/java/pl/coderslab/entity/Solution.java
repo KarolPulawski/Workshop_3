@@ -23,15 +23,18 @@ public class Solution {
     }
 
     public void setCreated(Date created) {
-        this.created = created;
+        if(created == null) this.created = new Date(0);
+        else this.created = created;
     }
 
     public void setUpdated(Date updated) {
-        this.updated = updated;
+        if(updated == null) this.updated = new Date(0);
+        else this.updated = updated;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        if(description == null) this.description = "";
+        else this.description = description;
     }
 
     public void setExercise_id(Integer exercise_id) {
