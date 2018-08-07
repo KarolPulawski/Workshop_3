@@ -13,26 +13,28 @@ import java.util.Map;
 
 public class SolutionDao {
 
-//    public static ArrayList<Exercise> loadByUserId(int id) throws Exception {
-//        String query = "SELECT exercise.title AS title, solution.created AS created FROM " +
+//    public static ArrayList<Solution> loadSolutionByExerciseId(int exercise_id) throws Exception {
+//        String query = "SELECT solution.created, solution.updated solution.description FROM " +
 //                "exercise " +
 //                "INNER JOIN solution ON exercise.id = solution.exercise_id " +
-//                "WHERE solution.users_id = ?";
+//                "WHERE exercise.id = ?";
 //        List<String> params = new ArrayList<>();
-//        params.add(String.valueOf(id));
+//        params.add(String.valueOf(exercise_id));
 //        List<Map<String, String>> data = DbService.getData(query, params);
-//        ArrayList<Exercise> exercises = new ArrayList<>();
+//        ArrayList<Solution> solutions = new ArrayList<>();
+//        for(Map<String, String> row :data){
 //
+//        }
+//        return solutions;
 //    }
 
-    public static ArrayList<Solution> loadByUserIdByExerciseId(int userId, int exerciseId) throws Exception {
+    public static ArrayList<Solution> loadByExerciseId(int exerciseId) throws Exception {
         String query = "SELECT solution.id AS id, solution.created AS created, solution.updated AS updated, solution.description AS description, " +
                 "solution.exercise_id AS exercise_id, solution.users_id AS users_id FROM " +
                 "exercise " +
                 "LEFT JOIN solution ON exercise.id = solution.exercise_id " +
-                "WHERE solution.users_id = ? AND solution.exercise_id = ?";
+                "WHERE solution.exercise_id = ?";
         List<String> params = new ArrayList<>();
-        params.add(String.valueOf(userId));
         params.add(String.valueOf(exerciseId));
         List<Map<String, String>> data = DbService.getData(query, params);
         ArrayList<Solution> solutions = new ArrayList<>();
@@ -49,6 +51,16 @@ public class SolutionDao {
         List<Map<String, String>> data = DbService.getData(query, params);
         ArrayList<Solution> solutions = new ArrayList<>();
         for(Map<String, String> row : data) {
+            solutions.add(createNewSolution(row));
+        }
+        return solutions;
+    }
+
+    public static List<Solution> loadAll(int limit) throws Exception {
+        String query = "SELECT * FROM solution ORDER BY updated DESC LIMIT "+ limit +"";
+        List<Map<String, String>> data = DbService.getData(query, null);
+        List<Solution> solutions = new ArrayList<>();
+        for (Map<String, String> row : data) {
             solutions.add(createNewSolution(row));
         }
         return solutions;

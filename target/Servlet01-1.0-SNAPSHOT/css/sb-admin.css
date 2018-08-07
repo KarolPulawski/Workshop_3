@@ -373,3 +373,26 @@ body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
 }
+
+#table_template {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table_template td, #table_template th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table_template tr:nth-child(even){background-color: #f2f2f2;}
+
+#table_template tr:hover {background-color: #ddd;}
+
+#table_template th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #0000CD;
+  color: white;
+}

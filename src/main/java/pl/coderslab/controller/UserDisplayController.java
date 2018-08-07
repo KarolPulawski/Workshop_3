@@ -24,20 +24,15 @@ public class UserDisplayController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer group_id;
         List<User> users = null;
-        List<Solution> solutions = null;
         try {
             group_id = Integer.parseInt(request.getParameter("group_id"));
             users = UserDao.loadAllByGroupId(group_id);
-            solutions = SolutionDao.loadAll();
         } catch (NumberFormatException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         request.setAttribute("users", users);
-        request.setAttribute("solutions", solutions);
         getServletContext().getRequestDispatcher("/META-INF/views/displayUser.jsp").forward(request, response);
-
     }
 }
