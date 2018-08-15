@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.manager.group;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +14,7 @@ public class GroupManagerController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/META-INF/views/groupManage.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/META-INF/views/group/groupManage.jsp").forward(request, response);
 
     }
 }

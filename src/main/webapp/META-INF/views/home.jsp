@@ -29,7 +29,6 @@
 
     <p>
         <a href=<c:url value="groupManage"/> >Group manager</a>
-        <a href=<c:url value="/META-INF/views/groupManage.jsp"/> >Group manager2</a>
     </p>
     <%--<p>--%>
         <%--<a href=<c:url value="userManage"/> >User manager</a>--%>

@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.manager.group;
 
 import pl.coderslab.dao.GroupDao;
 import pl.coderslab.entity.Group;
@@ -24,6 +24,6 @@ public class GroupManagerAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/META-INF/views/groupFormAdd.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/META-INF/views/group/groupFormAdd.jsp").forward(request, response);
     }
 }

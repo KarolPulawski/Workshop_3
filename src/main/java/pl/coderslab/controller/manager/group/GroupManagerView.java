@@ -1,4 +1,4 @@
-package pl.coderslab.controller;
+package pl.coderslab.controller.manager.group;
 
 import pl.coderslab.dao.GroupDao;
 import pl.coderslab.entity.Group;
@@ -26,7 +26,7 @@ public class GroupManagerView extends HttpServlet {
         }
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/META-INF/views/displayGroup.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/META-INF/views/group/groupDisplay.jsp").forward(request, response);
 
     }
 }

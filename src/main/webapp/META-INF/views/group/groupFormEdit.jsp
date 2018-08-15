@@ -13,10 +13,6 @@
 <body>
     <form action="" method="POST">
         <label>
-            Group ID to change name:
-            <input type="text" name="groupId">
-        </label>
-        <label>
             New group name:
             <input type="text" name="groupName">
         </label>
