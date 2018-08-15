@@ -21,6 +21,7 @@ public class GroupManagerDelete extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        response.sendRedirect("panelAdminGroup");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
