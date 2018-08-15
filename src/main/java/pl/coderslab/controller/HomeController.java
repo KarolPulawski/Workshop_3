@@ -8,6 +8,7 @@ import pl.coderslab.entity.Exercise;
 import pl.coderslab.entity.Group;
 import pl.coderslab.entity.Solution;
 import pl.coderslab.entity.User;
+import pl.coderslab.service.DateService;
 import pl.coderslab.service.DbService;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "HomeController", urlPatterns = {""})
@@ -26,6 +26,7 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
         List<Solution> solutions = null;
         try {

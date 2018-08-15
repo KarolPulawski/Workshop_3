@@ -2,6 +2,7 @@ package pl.coderslab.dao;
 
 import pl.coderslab.entity.Exercise;
 import pl.coderslab.entity.Solution;
+import pl.coderslab.service.DateService;
 import pl.coderslab.service.DbService;
 
 import java.sql.*;
@@ -80,21 +81,15 @@ public class SolutionDao {
         Solution solution = new Solution();
         solution.setId(Integer.parseInt(row.get("id")));
 
-        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-DD");
-
         String stringCreated = row.get("created");
         String stringUpdated = row.get("updated");
+//
+//        System.out.println(stringCreated + " | " + stringUpdated);
+//        DateService.dateFromDbString(stringCreated);
+//        DateService.dateFromDbString(stringUpdated);
 
-        if(stringUpdated == null) stringUpdated = "0000-00-00";
-
-        java.util.Date created = formatter.parse(stringCreated);
-        java.util.Date updated = formatter.parse(stringUpdated);
-        Date createdSql = new Date(created.getTime());
-        Date updateSql = new Date(updated.getTime());
-
-        solution.setCreated(createdSql);
-        solution.setUpdated(updateSql);
-
+        solution.setCreated(DateService.dateFromDbString(stringCreated));
+        solution.setUpdated(DateService.dateFromDbString(stringUpdated));
 
         String description = row.get("description");
         if(description == null) description = "---------";

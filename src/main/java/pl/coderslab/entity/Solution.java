@@ -1,17 +1,17 @@
 package pl.coderslab.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Solution {
 
     private Integer id;
-    private Date created;
-    private Date updated;
+    private Timestamp created;
+    private Timestamp updated;
     private String description;
     private Integer exercise_id;
     private Integer users_id;
 
-    public Solution(Date created, Date updated, String description, Integer exercise_id, Integer users_id) {
+    public Solution(Timestamp created, Timestamp updated, String description, Integer exercise_id, Integer users_id) {
         this.created = created;
         this.updated = updated;
         this.description = description;
@@ -22,13 +22,13 @@ public class Solution {
     public Solution() {
     }
 
-    public void setCreated(Date created) {
-        if(created == null) this.created = new Date(0);
+    public void setCreated(Timestamp created) {
+        if(created == null) this.created = new Timestamp(0);
         else this.created = created;
     }
 
-    public void setUpdated(Date updated) {
-        if(updated == null) this.updated = new Date(0);
+    public void setUpdated(Timestamp updated) {
+        if(updated == null) this.updated = new Timestamp(0);
         else this.updated = updated;
     }
 
@@ -53,11 +53,11 @@ public class Solution {
         return id;
     }
 
-    public Date getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public Date getUpdated() {
+    public Timestamp getUpdated() {
         return updated;
     }
 
