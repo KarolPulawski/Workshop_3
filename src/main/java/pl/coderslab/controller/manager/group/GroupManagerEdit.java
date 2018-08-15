@@ -26,10 +26,8 @@ public class GroupManagerEdit extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         Integer id = Integer.parseInt(request.getParameter("groupId"));
         request.setAttribute("groupId", id);
         getServletContext().getRequestDispatcher("/META-INF/views/group/groupFormEdit.jsp").forward(request, response);
-
     }
 }

@@ -9,9 +9,9 @@
     <p>
         <a href=<c:url value="panelAdminGroup"/> >Group manager</a>
     </p></br>
-    <%--<p>--%>
-        <%--<a href=<c:url value="panelAdminUser"/> >User manager</a>--%>
-    <%--</p></br>--%>
+    <p>
+        <a href=<c:url value="panelAdminUser"/> >User manager</a>
+    </p></br>
 
 </body>
 </html>
