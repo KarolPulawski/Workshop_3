@@ -28,8 +28,14 @@
     <h1>MANAGMENTS</h1>
 
     <p>
-        <a href="/groupManage">Manage group</a>
         <a href=<c:url value="groupManage"/> >Group manager</a>
+        <a href=<c:url value="/META-INF/views/groupManage.jsp"/> >Group manager2</a>
     </p>
+    <%--<p>--%>
+        <%--<a href=<c:url value="userManage"/> >User manager</a>--%>
+    <%--</p>--%>
+    <%--<p>--%>
+        <%--<a href=<c:url value="taskManage"/> >Task manager</a>--%>
+    <%--</p>--%>
 
 <%@include file="default/footer.jsp"%>

@@ -7,16 +7,16 @@
 </head>
 <body>
     <p>
-        <a href="/META-INF/views/manageGroupAdd.jsp">Add group</a>
+        <a href="/groupAdd">Add group</a>
     </p>
     <p>
-        <a href="/META-INF/views/manageGroupView.jsp">View groups</a>
+        <a href="/groupEdit">Edit group</a>
     </p>
     <p>
-        <a href="/META-INF/views/manageGroupEdit.jsp">Edit group</a>
+        <a href="/displayGroup">View group</a>
     </p>
     <p>
-        <a href="/META-INF/views/manageGroupDelete.jsp">Delete group</a>
+        <a href="/groupDelete">Delete group</a>
     </p>
 </body>
 </html>
