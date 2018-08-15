@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="/groupView">
+        <a class="nav-link" href="/panelAdmin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Panel admin</span>
         </a>

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "GroupManagerView", urlPatterns = {"/groupView"})
+@WebServlet(name = "GroupManagerView", urlPatterns = {"/panelAdminGroup"})
 public class GroupManagerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -26,7 +26,7 @@ public class GroupManagerView extends HttpServlet {
         }
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/META-INF/views/group/groupDisplay.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/META-INF/views/groupDisplay.jsp").forward(request, response);
 
     }
 }

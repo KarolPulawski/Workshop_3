@@ -24,6 +24,6 @@ public class GroupManagerAdd extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/META-INF/views/group/groupFormAdd.jsp").forward(request, response);
+       // getServletContext().getRequestDispatcher("/META-INF/views/group/groupFormAdd.jsp").forward(request, response);
     }
 }

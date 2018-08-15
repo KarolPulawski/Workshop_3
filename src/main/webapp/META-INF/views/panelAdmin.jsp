@@ -7,7 +7,8 @@
 </head>
 <body>
     <p>
-        <a href="/groupView">Group manager</a>
+        <a href="panelAdminGroup">Group manager</a>
+        <a href=<c:url value="panelAdminGroup"/> >Group manager 2 </a>
     </p>
 
 </body>
