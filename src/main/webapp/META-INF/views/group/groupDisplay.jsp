@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="default/header.jsp"%>
+<%@include file="../default/header.jsp"%>
 
     <table id="table_template">
         <tr>
@@ -37,4 +37,4 @@
         <input type="submit">
     </form>
 
-<%@include file="default/footer.jsp"%>
+<%@include file="../default/footer.jsp"%>

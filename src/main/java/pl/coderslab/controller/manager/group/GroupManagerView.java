@@ -26,7 +26,7 @@ public class GroupManagerView extends HttpServlet {
         }
 
         request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/META-INF/views/groupDisplay.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/META-INF/views/group/groupDisplay.jsp").forward(request, response);
 
     }
 }
