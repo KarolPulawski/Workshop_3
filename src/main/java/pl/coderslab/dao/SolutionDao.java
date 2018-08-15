@@ -83,10 +83,6 @@ public class SolutionDao {
 
         String stringCreated = row.get("created");
         String stringUpdated = row.get("updated");
-//
-//        System.out.println(stringCreated + " | " + stringUpdated);
-//        DateService.dateFromDbString(stringCreated);
-//        DateService.dateFromDbString(stringUpdated);
 
         solution.setCreated(DateService.dateFromDbString(stringCreated));
         solution.setUpdated(DateService.dateFromDbString(stringUpdated));

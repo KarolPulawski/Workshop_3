@@ -29,6 +29,5 @@ public class SolutionDisplayController extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

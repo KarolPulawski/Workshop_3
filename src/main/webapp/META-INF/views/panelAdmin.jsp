@@ -12,6 +12,9 @@
     <p>
         <a href=<c:url value="panelAdminUser"/> >User manager</a>
     </p></br>
+    <p>
+        <a href=<c:url value="panelAdminExercise"/> >Exercise manager</a>
+    </p></br>
 
 </body>
 </html>

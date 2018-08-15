@@ -25,10 +25,4 @@
         </c:forEach>
     </table>
 
-    <h1>MANAGMENTS</h1>
-
-    <p>
-        <a href=<c:url value="groupManage"/> >Group manager</a>
-    </p>
-
 <%@include file="default/footer.jsp"%>

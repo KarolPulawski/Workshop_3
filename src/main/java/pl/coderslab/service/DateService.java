@@ -9,11 +9,8 @@ public class DateService {
 
     public static java.sql.Timestamp dateFromDbString(String dateString) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
         try {
             java.util.Date date1 = dateFormat.parse(dateString);
-
-            System.out.println("Date from DB: " + date1.toString());
             return new java.sql.Timestamp(date1.getTime());
         } catch (ParseException e) {
             e.printStackTrace();

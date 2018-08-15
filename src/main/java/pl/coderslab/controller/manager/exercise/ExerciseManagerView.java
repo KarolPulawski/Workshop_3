@@ -1,7 +1,7 @@
-package pl.coderslab.controller.manager.group;
+package pl.coderslab.controller.manager.exercise;
 
-import pl.coderslab.dao.GroupDao;
-import pl.coderslab.entity.Group;
+import pl.coderslab.dao.ExerciseDao;
+import pl.coderslab.entity.Exercise;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,21 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "GroupManagerView", urlPatterns = {"/panelAdminGroup"})
-public class GroupManagerView extends HttpServlet {
+@WebServlet(name = "ExerciseManagerView", urlPatterns = {"/panelAdminExercise"})
+public class ExerciseManagerView extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Group> groups = null;
+        List<Exercise> exercises = null;
         try {
-            groups = GroupDao.loadAll();
+            exercises = ExerciseDao.loadAll();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        request.setAttribute("groups", groups);
-        getServletContext().getRequestDispatcher("/META-INF/views/group/groupDisplay.jsp").forward(request, response);
+        request.setAttribute("exercises", exercises);
+        getServletContext().getRequestDispatcher("/META-INF/views/exercise/exerciseDisplay.jsp").forward(request, response);
+
     }
 }
